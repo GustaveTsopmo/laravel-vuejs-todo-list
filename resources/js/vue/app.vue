@@ -1,11 +1,17 @@
 <template>
-  <div class="todo-list-container bg-dark">
-    <div class="heading">
-      <h2 class="h2" id="title">Todo List</h2>
-      <add-item-form v-on:reloadlist="getList()" />
-    </div>
+  <div class="container ">
+    <div class="row align-items-center justify-content-center mx-0">
+      <div class="col col-sm-8 col-md-7 col-lg-6 shadow p-1 pb-2">
+        <div class="heading">
+          <h2 class="h2 pl-2 text-muted font-weight-bold" id="title">Todo List</h2>
+          <add-item-form v-on:reloadlist="getList()" />
+        </div>
 
-    <list-view :items="items" v-on:reloadlist="getList()" />
+        <div class="shadow">
+          <list-view class="shadow" :items="items" v-on:reloadlist="getList()" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,23 +44,14 @@ export default {
   },
 
   created() {
-      this.getList();
-  }
+    this.getList();
+  },
 };
 </script>
 
 <style scoped>
-.todo-list-container {
-  width: 350px;
-  margin: auto;
-}
-
 .heading {
-  background: #e6e6e6;
+  background: #fff;
   padding: 10px;
-}
-
-#title {
-  text-align: center;
 }
 </style>

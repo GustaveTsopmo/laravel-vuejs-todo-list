@@ -1,6 +1,7 @@
 <template>
     <div class="item">
-        <input class="checkbox" type="checkbox" @change="updateCheck()" v-model="item.completed" />
+
+        <input class="checkbox " type="checkbox" @change="updateCheck()" v-model="item.completed" />
 
         <span :class="[item.completed ? 'completed' : '', 'item-text']">{{ item.name }}</span>
 
@@ -59,6 +60,7 @@ export default {
 
 .checkbox{
     cursor: pointer;
+
 }
 
 .item{
@@ -68,7 +70,7 @@ export default {
 }
 
 .trashcan{
-    background: #e6e6e6;
+    background: transparent;
     border: none;
     color: #ff0000;
     outline: none;
