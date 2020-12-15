@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(item, index) in items" :key="index">
+    <div v-for="(item, index) in filteredItem" :key="index">
       <list-item :item="item" class="item border-top my-auto p-2" v-on:itemchanged="$emit('reloadlist')" />
     </div>
   </div>
@@ -9,7 +9,7 @@
 <script>
 import listItem from "./listItem";
 export default {
-  props: ["items"],
+  props: ["filteredItem"],
 
   components: {
     listItem,
